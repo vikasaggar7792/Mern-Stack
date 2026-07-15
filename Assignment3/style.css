@@ -1,0 +1,416 @@
+/* RESET*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* BODY */
+
+body{
+    background:white;
+    padding:15px;
+}
+
+/* MAIN HEADING */
+
+.heading{
+
+    background:linear-gradient(to right,red,white,green);
+        
+    text-align:center;
+
+    text-decoration:underline;
+
+    padding: -10px 0;
+
+    margin: 10px 0;
+
+    font-weight:bold;
+
+    border-radius:5px;
+
+}
+
+/* NAVIGATION */
+
+.nav-box{
+
+    width:600px;
+
+    margin:20px auto;
+
+    background:#9be8f2;
+
+    color:black;
+
+    border:3px solid red;
+
+    border-radius:15px;
+
+    padding:15px;
+
+}
+
+.nav-box ul{
+
+    list-style:disc;
+
+    text-align:center;
+
+}
+
+.nav-box li{
+
+    margin:8px 0;
+
+}
+
+.nav-box a{
+
+    color:blue;
+
+    font-weight:bold;
+
+}
+
+/* INFORMATION BOXES */
+
+.info-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:space-evenly;
+
+    background:#8df3ef;
+
+    border:3px solid green;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    gap:15px;
+
+}
+
+.box{
+
+    width:31%;
+
+    background:#42f3c8;
+
+    border:2px solid green;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    padding:15px;
+
+    font-weight:bold;
+
+}
+
+.box4{
+
+    width:40%;
+
+}
+
+/* ==========================
+   TOP PERFORMER HEADING
+========================== */
+
+.performer-heading{
+
+    margin-top:25px;
+
+    padding:12px;
+
+    text-align:center;
+
+    background:linear-gradient(to right,red,yellow,red);
+
+    text-decoration:underline;
+
+    font-weight:bold;
+
+}
+
+/* ==========================
+   STUDENT SECTION
+========================== */
+
+.student-container{
+
+    margin-top:20px;
+
+    display:flex;
+
+    justify-content:space-evenly;
+
+    align-items:center;
+
+    padding:40px;
+
+    border:3px solid green;
+
+    border-radius:20px;
+
+    background:radial-gradient(circle,skyblue,green);
+
+}
+/* ==========================
+   STUDENT CARDS
+========================== */
+
+.student{
+
+    width:220px;
+
+    background:#ffe96a;
+
+    border:2px solid red;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    padding:20px;
+
+    line-height:35px;
+
+    color:#8b0000;
+
+    font-weight:bold;
+
+    text-decoration:underline;
+
+}
+
+.student h3{
+
+    font-size:22px;
+
+}
+
+.student p{
+
+    font-size:18px;
+
+}
+
+/* ==========================
+   CAREER HEADING
+========================== */
+
+.career-heading{
+
+    margin: 20px 0;
+
+    text-align:center;
+
+    color:white;
+
+    background:#d62828;
+
+    padding: 10px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+/* ==========================
+   GRID CONTAINER
+========================== */
+
+.grid-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    grid-template-rows:auto auto;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+/* Box 1 */
+
+.grid1{
+
+    background:#7ee081;
+
+    color:white;
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    padding:20px;
+
+}
+
+/* Box 2 */
+
+.grid2{
+
+    background:#43b0ff;
+
+    color:white;
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    padding:20px;
+
+}
+
+/* Box 3 */
+
+.grid3{
+
+    background:#2d2dd8;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    padding:20px;
+
+}
+
+/* Right Side */
+
+.grid4{
+
+    background:black;
+
+    color:white;
+
+    padding:20px;
+
+    grid-row:1 / span 2;
+
+}
+
+.grid4 ol{
+
+    padding-left:20px;
+
+}
+
+.grid4 li{
+
+    margin-bottom:15px;
+
+    text-decoration:underline;
+
+}
+
+/* Bottom Box */
+
+.grid5{
+
+    grid-column:1 / span 3;
+
+    background:#ff8c00;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    padding:20px;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer{
+
+    margin-top:15px;
+
+    background:#66e3e3;
+
+    text-align:center;
+
+    padding:10px;
+
+    font-weight:bold;
+
+    font-size:22px;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+    .nav-box{
+
+        width:90%;
+
+    }
+
+    .box{
+
+        width:100%;
+
+    }
+
+    .box4{
+
+        width:100%;
+
+    }
+
+    .student-container{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .grid-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .grid4{
+
+        grid-row:auto;
+
+    }
+
+    .grid5{
+
+        grid-column:auto;
+
+    }
+
+}
