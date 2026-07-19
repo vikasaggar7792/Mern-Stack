@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+</head>
+<style>
+    *{
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .main{
+        margin: 0%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        height: 100px;
+        align-items: center;
+    }
+
+    .navbar{
+        margin: 0px;
+        background-color: rgb(76, 37, 124);
+        height: 100px;
+        grid-column: 1/5;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+
+    .section1-1{
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        align-content: center;
+        transition: all .5s ease;
+        
+    }
+
+    .section1-1 a{
+        font-size: 20px;
+        color: aliceblue;
+        text-decoration: none;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .section1-1 a:hover{
+        color: rgb(199, 173, 173);
+        transform: scale(1.2);
+    }
+
+    .section1-1 img{
+        position: relative;
+        top: -7px;
+        margin-right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .Social{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .Social img{
+        width: 25px;
+        height: 25px;
+    }
+    
+    .search{
+        width: 300px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        border: 1px solid rgba(255,255,255,0.3);
+        border-radius: 8px;
+        background: linear-gradient(to right,#6d28d9,#7c3aed);
+    }
+    .search input{
+        /* Now the input grows to occupy all the remaining space.
+        -------------------------------------------------
+        | 🔍 |--------- Input ----------| CTRL K |
+        -------------------------------------------------
+        It automatically adjusts its width based on the available space. */
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: white;
+        font-size: 18px;
+    }
+    .search input::placeholder{
+        color:rgba(255,255,255,0.7) ;
+    }
+    .search img{
+        width: 19px;
+        height: 19px;
+        margin-right: 5px;
+    }
+    .search span{
+        color: white;
+        font-size: 13px;
+        border: 1px solid black;
+        border-radius: 2px;
+        background: rgba(0,0,0,0.3);
+        
+    }
+    .search:focus-within{
+        border-color: white;
+        box-shadow: 0px 0px 10px rgba(255,255,255,0.3);
+    }
+    .search:hover{
+        border-color: rgb(132, 132, 47);
+        box-shadow: 0px 0px 10px rgba(255,255,255,0.7);
+        
+    }
+    .divider{
+        height: 25px;
+        background: rgba(255,255,255,0.3);
+    }
+
+    .dropdown{
+        position: relative;
+    }
+    .dropbtn{
+        /* Normally A Button have A BackGround */
+        background: none;
+        border: none;
+        color: white;
+        font-size: 17px;
+    }
+    .dropdowncontent{
+        /* display:none; This means Don't Show It */
+        display:none;
+        position:absolute;
+        /* top : 40px Means Move THe Menu Downward 40px */
+        top:40px;
+        /* left:0; Align with the left side.*/
+        left: 0px;
+        background:#252a2f;
+        min-width:180px;
+        border-radius:8px;
+        overflow:hidden;
+        box-shadow:0 10px 25px rgba(0,0,0,.4);
+    }
+    .dropdowncontent a{
+    /* display:block; Anchor tags normally behave like text.
+    Item Item Item
+    display:block
+    makes them
+    Item
+    Item
+    Item
+    Each occupies an entire row */
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:14px 18px;
+    }
+
+    .dropdowncontent a:hover{
+    background:#6d28d9;
+    }
+    /* When the mouse is over .dropdown, show .dropdown-content. */
+    .dropdown:hover .dropdowncontent{
+    display:block;
+    }
+
+    /* Theme Changer */
+    .Theme{
+        position: relative;
+    }
+    .themebtn{
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    .themebtn img{
+        width: 23px;
+        height: 23px;
+    }
+    .thememenu{
+        position: absolute;
+        display: none;
+        min-width: 180px;
+        background: rgb(21, 10, 52);
+        border-radius:8px;
+        overflow:hidden;
+        box-shadow:0 10px 25px rgba(0,0,0,.4);
+        top: 40px;
+        right: 0px;
+    }
+    .thememenu a{
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 5px 5px;
+        
+    }
+    .thememenu a:hover{
+        background-color: white;
+    }
+    .Theme:hover .thememenu{
+        display: block;
+    }
+    /* Divider */
+    .divider{
+    width:1px;
+    height:25px;
+    background:rgba(255,255,255,.3);
+    }
+    /* SideBar */
+    .sidebar{
+        background-color: rgb(76, 37, 124);
+        grid-row: 2/5;
+        grid-column: 1/2;
+        height: 100vh;
+        width: 70%;
+        
+    }
+    .top-icons img{
+        width: 40px;
+        height: 40px;
+    }
+    .top-icons{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .profilephoto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .profilephoto img{
+        border: 5px solid rgb(143, 169, 181);
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+    .profilephoto h3{
+        font-size: 20px;
+        color: white;
+    }
+    .MailNavigation {
+        margin-top: 30px;
+    } 
+    .MailNavigation img{
+        width: 20px;
+        height: 20px;
+    }
+    .menuitem1{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        padding: 15px 20px;
+        transition: all .3s ease;
+    }
+    .menuitem2{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        padding: 15px 20px;
+        transition: all .3s ease;
+    }
+    .menuitem1:hover{
+        background:#32435d;
+        border-radius: 8px;
+        margin: 10px;
+        box-shadow: 0px 8px 20px rgba(0,0,0,.25) ;
+        transition: translateX(5px);
+    }
+    .menuitem2:hover{
+        background:#32435d;
+        border-radius: 8px;
+        margin: 10px;
+        box-shadow: 0px 8px 20px rgba(0,0,0,.25) ;
+        transition: translateX(5px);
+    }
+    .Categories img{
+        width: 20px;
+        height: 20px;
+    }
+    .Friends{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        padding: 15px 20px;
+        transition: all .3s ease;
+    }
+    .Important{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        padding: 15px 20px;
+        transition: all .3s ease;
+
+    }
+    .WorkGroup{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        padding: 15px 20px;
+        transition: all .3s ease;
+    }
+    .Developers{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        padding: 15px 20px;
+        transition: all .3s ease;
+    } 
+    .Friends:hover{
+        background:#32435d;
+        border-radius: 8px;
+        margin: 10px;
+        box-shadow: 0px 8px 20px rgba(0,0,0,.25) ;
+        transition: translateX(5px);
+    }
+    .WorkGroup:hover{
+        background:#32435d;
+        border-radius: 8px;
+        margin: 10px;
+        box-shadow: 0px 8px 20px rgba(0,0,0,.25) ;
+        transition: translateX(5px);
+    }
+    .Developers:hover{
+        background:#32435d;
+        border-radius: 8px;
+        margin: 10px;
+        box-shadow: 0px 8px 20px rgba(0,0,0,.25) ;
+        transition: translateX(5px);
+    }
+    .Important:hover{
+        background:#32435d;
+        border-radius: 8px;
+        margin: 10px;
+        box-shadow: 0px 8px 20px rgba(0,0,0,.25) ;
+        transition: translateX(5px);
+    }
+    /* CARDS */
+    .Cards{
+        grid-column: 2/5;
+        grid-row: 2/4;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-auto-rows: 300px;
+        gap: 20px;
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+    .cards{
+        background: rgb(150, 121, 121);
+    }
+    
+    #cardsmain{
+        border: 1px solid rgb(172, 150, 150);
+        border-radius: 20px;
+        transition: transform .3 ease;
+    }
+    #cardsmain:hover{
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0,0,0,.2);
+    }
+    
+</style>
+<body>
+    <div class="main">
+        <nav class="navbar">
+            <div class="section1-1">
+                <img src="bootstrap.png" alt="BootStrapIcon">
+                <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/"> Docs </a>
+                <a href="https://getbootstrap.com/docs/5.3/examples/"> Examples </a>
+                <a href="https://getbootstrap.com/docs/5.3/examples/"> Icons </a>
+                <a href="https://blog.getbootstrap.com/"> Blog </a>
+            </div>
+            <div class="search">
+                <img src="magnifying-glass.png" alt="SeachIcon">
+                <input type="text" placeholder="Search">
+                <span>CTRL K</span>
+            </div>
+            <div class="Social">
+                <img src="twitter.png" alt="Twitter">
+                <img src="github.png" alt="GitHub">
+                <img src="speedometer.png" alt="OpenCollabrative">
+                <div class="divider"> </div>
+                <!-- Important DropDown Menu -->
+                <div class="dropdown">
+                    <button class = "dropbtn">
+                        v5.3 ▼
+                    </button>
+                    <div class="dropdowncontent">
+                        <a href="#">Latest (5.3.x)</a>
+                        <a href="#">v5.2.3</a>
+                        <a href="#">v5.1.3</a>
+                        <a href="#">v5.0.2</a>
+                    </div>
+                </div>
+                <div class="divider"> </div>
+                <div class="Theme">
+                    <button class="themebtn"><img src="device-theme.png" alt="DeviceTheme"></button>
+                    <div class="thememenu">
+                        <a href="#">Light</a>
+                        <a href="#">Dark</a>
+                </div>
+            </div>
+                
+            </div>
+
+            
+        </nav>
+
+
+        <div class="sidebar">
+            <div class="top-icons">
+                <img src="settings.png" alt="SettingsIcon">
+                <img src="menus.png" alt="hamburger">
+            </div>
+            <div class="profilephoto">
+                <img src="profile.png" alt="Profile-Photo">
+                <h3>Vikas Aggarwal</h3>
+                <h3>Email:@gmail.com</h3>
+
+            </div>
+            <div class="MailNavigation">
+                <!-- <img src="open-mail.png" alt="MailIcon" ><a href="#">MailBox</a>
+                <img src="chat.png" alt="Chat-Icon"><a href="#">Conversations</a>     -->
+                <a href="#" class="menuitem1">
+                    <img src="open-mail.png" alt="Open-Mail">
+                    <span>MailBox</span>
+                </a>
+                <a href="#" class="menuitem2">
+                    <img src="chat.png" alt="Open-Mail">
+                    <span>Conversations</span>
+                </a>
+            </div>
+            <div class="Categories">
+                <a href="#" class="Friends">
+                <img src="record.png" alt="Buttons">
+                <span>Friends</span>
+                </a>
+                <a href="#" class="Important">
+                <img src="record.png" alt="Buttons">
+                <span>Important</span>
+                </a>
+                <a href="#" class="WorkGroup"><img src="record.png" alt="Buttons">
+                <span>WorkGroup</span></a>
+                <a href="#" class="Developers"><img src="record.png" alt="Buttons">
+                <span>Developers</span></a>
+            </div>
+        </div>
+
+        <div class="Cards">
+            <div class="cards" id="cardsmain"></div>
+            <div class="cards" id="cardsmain"></div>
+            <div class="cards" id="cardsmain"></div>
+            <div class="cards" id="cardsmain"></div>
+            <div class="cards" id="cardsmain"></div>
+            <div class="cards" id="cardsmain"></div>
+
+        </div>
+    </div>
+    
+</body>
+</html>
