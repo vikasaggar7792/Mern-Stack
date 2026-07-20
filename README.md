@@ -70,7 +70,8 @@ fullstack-learning-journey/
 
 🙋‍♂️ Author
 
-Vikas Aggarwal 
+Vikas Aggarwal
+
 B.Tech IT | Full Stack Learner
 
 ---
