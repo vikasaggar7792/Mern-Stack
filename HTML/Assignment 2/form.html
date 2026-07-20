@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+
+    <form action="table.html" method="get">
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name">
+        <br><br>
+
+        <label for="email">Email-id</label>
+        <input type="email" id="email" name="email" placeholder="Email-id">
+        <br><br>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password">
+        <br><br>
+
+        <label>Language</label>
+        <br><br>
+
+        <label for="html">
+            <input type="radio" id="html" name="language" value="HTML">
+            HTML
+        </label>
+        <br>
+
+        <label for="css">
+            <input type="radio" id="css" name="language" value="CSS">
+            CSS
+        </label>
+        <br>
+
+        <label for="javascript">
+            <input type="radio" id="javascript" name="language" value="JavaScript">
+            JavaScript
+        </label>
+
+        <br><br><br>
+
+        <label>Course</label>
+        <br><br>
+
+        <label for="java-stack">
+            <input type="checkbox" id="java-stack" name="course" value="Java Stack">
+            Java Stack
+        </label>
+        <br>
+
+        <label for="data-science">
+            <input type="checkbox" id="data-science" name="course" value="Data Science">
+            Data Science
+        </label>
+        <br>
+
+        <label for="mern-stack">
+            <input type="checkbox" id="mern-stack" name="course" value="MERN Stack">
+            MERN Stack
+        </label>
+
+        <br><br><br>
+
+        <label for="field">Field</label>
+        <br><br>
+
+        <select id="field" name="field">
+            <option value="" selected disabled>Select</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Full Stack">Full Stack</option>
+            <option value="Data Science">Data Science</option>
+        </select>
+
+        <br><br>
+
+        <label for="about">Describe Yourself</label>
+        <br><br>
+
+        <textarea id="about" name="about" rows="3" cols="25" placeholder="Describe yourself"></textarea>
+
+        <br><br>
+
+        <label for="date">Date</label>
+        <br><br>
+
+        <input type="date" id="date" name="date">
+
+        <br><br>
+
+        <label for="phone">Phone No.</label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone No.">
+
+        <br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <br>
+
+    <a href="table.html">Click Here For Table File</a>
+
+</body>
+
+</html>
