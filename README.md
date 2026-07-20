@@ -70,7 +70,7 @@ fullstack-learning-journey/
 
 🙋‍♂️ Author
 
-Aayush Kumar  
+Vikas Aggarwal 
 B.Tech IT | Full Stack Learner
 
 ---
